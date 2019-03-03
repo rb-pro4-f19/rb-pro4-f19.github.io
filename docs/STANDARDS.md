@@ -1,5 +1,5 @@
 # Coding Conventions
-This document defines the coding standards for `C99`, including the use of github. Last modification: {{ file.mtime }}
+This document defines the coding standards for `C99`, including the use of GitHub.
 
 ---
 
