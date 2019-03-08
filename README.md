@@ -41,23 +41,14 @@ Text.
 Data between the MCU (master) and FPGA (slave) is transmitted using SPI and a custom 16-bit frame format and communication protocol.
 
 ##### Configuration
-The standard Freescale protocol is configured to `16-bit` frames with a transmission rate of `8 Mb/s` in `Mode 0` `(SPO: 0 SPH: 0)`.
+The standard Freescale protocol is configured to `16-bit` frames with a transmission rate of `8 Mb/s` in `Mode 0`.
 
 ##### Frame Format
 The `16-bit` frame are comprised of an address, data and checksum field, with varying sizes: respectively `ADDR:4`, `DATA:8` and `CHKSUM:4`. Response frames from FPGA to MCU omits the address fields and consists instead of respectively `DATA:12` and `CHKSUM:4`.
 
-<div class="tg-wrap"><table>
-  <tr>
-    <th colspan="3">Test</th>
-  </tr>
-  <tr>
-    <td>Address</td>
-    <td>Data</td>
-    <td>Checksum</td>
-  </tr>
-</table></div>
+[IMAGE]
 
-#### Protocol
+##### Protocol
 Frames transmitted to the FPGA must be acknowledged with a frame of valid checksum, although the content of the frame may be disregarded. Checksum is calculated using the BSD algorithm on the 12 most-significant bits of a frame.
 
 ### FPGA Debugging (UART)
