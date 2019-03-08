@@ -1,8 +1,6 @@
 # RB-PRO4: Pan-Tilt System
 Short project description.
 
-> This projects follows the following coding conventions for C++, Embedded C and VHDL.
-
 ---
 
 ##### Table of Contents
