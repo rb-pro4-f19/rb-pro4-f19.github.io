@@ -9,7 +9,7 @@ The main objective of the project is to develop a stable and responsive system c
 
 ---
 
-#### Table of Contents
+## Table of Contents
 
 * [System Architecture](#system-architecture)
 * [System Requirements](#system-requirements)
