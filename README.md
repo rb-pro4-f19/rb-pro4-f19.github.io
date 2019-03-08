@@ -3,7 +3,7 @@ A construction comprised of two joints with two degrees of rotational freedom, p
 
 ![Cad Model][cad-model-gif]
 
-The main objective of the project is to develop a stable and responsive system controller in accordance with specified [system requirements](#system-requirments). The robot must respond appropriately when interfaced with a joystick, even in the presence of potential disturbances.
+The main objective of the project is to develop a stable and responsive system controller in accordance with specified [system requirements](#system-requirements). The robot must respond appropriately when interfaced with a joystick, even in the presence of potential disturbances.
 
 [cad-model-gif]: https://raw.githubusercontent.com/rb-pro4-f19/Overleaf/master/assets/img/cad_model.gif
 
@@ -34,7 +34,7 @@ The MCU is interfaced via a console over a UART serial connection, enabling user
 
 Information regarding the system components can be found in their respective read-me files of their repositories. ~~A table of system commands can be found [here][table_cli].~~
 
-[system_architecture]: https://github.com/rb-pro4-f19/Overleaf/blob/master/assets/img/system_architecture.jpg
+[system_architecture]: https://raw.githubusercontent.com/rb-pro4-f19/Overleaf/master/assets/img/system_architecture.jpg
 [table_cli]: #system-architecture
 [cli]: https://github.com/rb-pro4-f19/CLI
 [mcu]: https://github.com/rb-pro4-f19/MCU
@@ -65,7 +65,7 @@ Frames transmitted to the FPGA must be acknowledged with a frame of valid checks
 
 [table_spi]: #intersystem-communication--spi-
 [bsd_wiki]: https://en.wikipedia.org/wiki/BSD_checksum
-[frm_format]: https://github.com/rb-pro4-f19/Overleaf/blob/master/assets/img/spi_frames.jpg
+[frm_format]: https://raw.githubusercontent.com/rb-pro4-f19/Overleaf/master/assets/img/spi_frames.jpg
 
 ### FPGA Debugging (UART)
 Text.
