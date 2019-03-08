@@ -9,7 +9,7 @@ The main objective of the project is to develop a stable and responsive system c
 
 ---
 
-##### Table of Contents
+#### Table of Contents
 
 * [System Architecture](#system-architecture)
 * [System Requirements](#system-requirements)
@@ -52,15 +52,15 @@ Text.
 ### Intersystem Communication (SPI)
 Data between the MCU (master) and FPGA (slave) is transmitted using SPI and a custom 16-bit frame format and communication protocol. ~~The command table can be found [here][table_spi]~~.
 
-##### Configuration
+#### Configuration
 The standard Freescale protocol is configured to `16-bit` frames with a transmission rate of `8 Mb/s` in `Mode 0`.
 
-##### Frame Format
+#### Frame Format
 The `16-bit` frame are comprised of an address, data and checksum field, with varying sizes: respectively `ADDR:4`, `DATA:8` and `CHKSUM:4`. Response frames from FPGA to MCU omits the address fields and consists instead of respectively `DATA:12` and `CHKSUM:4`.
 
 ![frm_format]
 
-##### Protocol
+#### Protocol
 Frames transmitted to the FPGA must be acknowledged with a frame of valid checksum, although the content of the frame may be disregarded. Checksum is calculated using the [BSD algorithm][bsd_wiki] on the 12 most-significant bits of a frame.
 
 [table_spi]: #intersystem-communication--spi-
