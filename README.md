@@ -1,15 +1,18 @@
 # RB-PRO4: Pan-Tilt System
-Short project description.
+A construction comprised of two joints with two degrees of rotational freedom, pan and tilt. Each joint is equipped with a DC motor and encoder, which are sensed using an FPGA and then regulated using a PID controller implemented via a MCU; the system is interfaced using a Joystick for movement control and CLI for command control.
 
-![Cad Model](https://github.com/rb-pro4-f19/Overleaf/blob/master/assets/img/cad_model.gif)
+![Cad Model][cad-model-gif]
 
-Some more text.
+The main objective of the project is to develop a stable and responsive system controller in accordance with specified [system requirements](#system-requirments). The robot must respond appropriately when interfaced with a joystick, even in the presence of potential disturbances.
+
+[cad-model-gif]: https://github.com/rb-pro4-f19/Overleaf/blob/master/assets/img/cad_model.gif
 
 ---
 
 ##### Table of Contents
 
 * [System Architecture](#system-architecture)
+* [System Requirments](#system-requirments)
 * [Interfacing](#interfacing)
 	+ [Console Interface (UART)](#console-interface--uart-)
 	+ [Intersystem Communication (SPI)](#intersystem-communication--spi-)
@@ -24,6 +27,9 @@ The MCU connects to a CLI using serial connection, enabling users to interact wi
 ![System Arhictecture](https://github.com/rb-pro4-f19/Overleaf/blob/master/assets/img/system_architecture.jpg)
 
 Links to the components of system.
+
+## System Requirments
+Text.
 
 ## Interfacing
 Text.
