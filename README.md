@@ -14,9 +14,9 @@ The main objective of the project is to develop a stable and responsive system c
 * [System Architecture](#system-architecture)
 * [System Requirements](#system-requirements)
 * [Interfacing](#interfacing)
-	+ [Console Interface (UART)](#console-interface--uart-)
-	+ [Intersystem Communication (SPI)](#intersystem-communication--spi-)
-	+ [FPGA Debugging (UART)](#fpga-debugging--uart-)
+	+ [Console Interface (UART)](#console-interface-uart)
+	+ [Intersystem Communication (SPI)](#intersystem-communication-spi)
+	+ [FPGA Debugging (UART)](#fpga-debugging-uart)
 * [Controller](#controller)
 
 ---
