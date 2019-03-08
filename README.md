@@ -5,14 +5,14 @@ A construction comprised of two joints with two degrees of rotational freedom, p
 
 The main objective of the project is to develop a stable and responsive system controller in accordance with specified [system requirements](#system-requirments). The robot must respond appropriately when interfaced with a joystick, even in the presence of potential disturbances.
 
-[cad-model-gif]: https://github.com/rb-pro4-f19/Overleaf/blob/master/assets/img/cad_model.gif
+[cad-model-gif]: https://raw.githubusercontent.com/rb-pro4-f19/Overleaf/master/assets/img/cad_model.gif
 
 ---
 
 ##### Table of Contents
 
 * [System Architecture](#system-architecture)
-* [System Requirements](#system-requirments)
+* [System Requirements](#system-requirements)
 * [Interfacing](#interfacing)
 	+ [Console Interface (UART)](#console-interface--uart-)
 	+ [Intersystem Communication (SPI)](#intersystem-communication--spi-)
