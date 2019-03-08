@@ -28,11 +28,9 @@ The system is comrpised of three main components, which together control the Pan
 - TM4C Microcontroller ([MCU][mcu])
 - Field Programmable Gate Array ([FPGA][fpga])
 
-The MCU is interfaced via a command-line interface over a UART serial connection, enabling users to interact with the system. Movement control of the robot is achieved using a joystick connected to the MCU. Intersystem communication between the FPGA and MCU is facilitated using SPI, with the MCU as master.
+The MCU is interfaced via a command-line interface over a UART serial connection, enabling users to interact with the system. Movement control of the robot is achieved using a joystick connected to the MCU, which acts as the system controller. Intersystem communication between the FPGA and MCU is facilitated using SPI, with the MCU as master. The FPGA allows for direct data collection using a UART output for debugging, enabled via the MCU console.
 
 ![system_architecture]
-
-The FPGA allows for direct data collection using a UART output for debugging, enabled via the MCU console.
 
 More information about the system components can be found in their respective read-me files, located in their repositories.
 
