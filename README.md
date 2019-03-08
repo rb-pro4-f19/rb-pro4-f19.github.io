@@ -49,7 +49,10 @@ The `16-bit` frame are comprised of an address, data and checksum field, with va
 [IMAGE]
 
 ##### Protocol
-Frames transmitted to the FPGA must be acknowledged with a frame of valid checksum, although the content of the frame may be disregarded. Checksum is calculated using the BSD algorithm on the 12 most-significant bits of a frame.
+Frames transmitted to the FPGA must be acknowledged with a frame of valid checksum, although the content of the frame may be disregarded. Checksum is calculated using the [BSD algorithm][bsd_wiki] on the 12 most-significant bits of a frame.
+
+[bsd_wiki]: https://en.wikipedia.org/wiki/BSD_checksum
+[frm_format]: https://github.com/img.jpg
 
 ### FPGA Debugging (UART)
 Text.
