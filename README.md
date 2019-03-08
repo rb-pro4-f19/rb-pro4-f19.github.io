@@ -1,6 +1,9 @@
 # RB-PRO4: Pan-Tilt System
-![Cad Model](https://github.com/rb-pro4-f19/Overleaf/blob/master/assets/img/cad_model.gif)
 Short project description.
+
+![Cad Model](https://github.com/rb-pro4-f19/Overleaf/blob/master/assets/img/cad_model.gif)
+
+Some more text.
 
 ---
 
