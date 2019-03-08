@@ -46,7 +46,13 @@ The standard Freescale protocol is configured to `16-bit` frames with a transmis
 ##### Frame Format
 The `16-bit` frame are comprised of an address, data and checksum field, with varying sizes: respectively `ADDR:4`, `DATA:8` and `CHKSUM:4`. Response frames from FPGA to MCU omits the address fields and consists instead of respectively `DATA:12` and `CHKSUM:4`.
 
-<div class="tg-wrap"><table>
+<style>
+table {
+    width:100%;
+}
+</style>
+
+<div class="tg-wrap"><table width="100%">
   <tr>
     <th colspan="3">Test</th>
   </tr>
