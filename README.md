@@ -28,13 +28,14 @@ The system is comrpised of three main components, which together control the Pan
 - TM4C Microcontroller ([MCU][mcu])
 - Field Programmable Gate Array ([FPGA][fpga])
 
-The MCU is interfaced via a command-line interface over a UART serial connection, enabling users to interact with the system. Movement control of the robot is achieved using a joystick connected to the MCU, which acts as the system controller. Intersystem communication between the FPGA and MCU is facilitated using SPI, with the MCU as master. The FPGA allows for direct data collection using a UART output for debugging, enabled via the MCU console.
+The MCU is interfaced via a console over a UART serial connection, enabling users to enter system commands. Movement control of the robot is achieved using a joystick connected to the MCU, which acts as the system controller. Intersystem communication between the FPGA and MCU is facilitated using SPI, with the MCU as master. The FPGA allows for direct data collection using a UART output for debugging, enabled via the MCU console.
 
 ![system_architecture]
 
-More information about the system components can be found in their respective read-me files, located in their repositories.
+Information regarding the system components can be found in their respective read-me files of their repositories. ~~A table of system commands can be found [here][table_cli].~~
 
 [system_architecture]: https://github.com/rb-pro4-f19/Overleaf/blob/master/assets/img/system_architecture.jpg
+[table_cli]: #system-architecture
 [cli]: https://github.com/rb-pro4-f19/CLI
 [mcu]: https://github.com/rb-pro4-f19/MCU
 [fpga]: https://github.com/rb-pro4-f19/FPGA
@@ -49,7 +50,7 @@ Text.
 Text.
 
 ### Intersystem Communication (SPI)
-Data between the MCU (master) and FPGA (slave) is transmitted using SPI and a custom 16-bit frame format and communication protocol. ~~The command table can be found [here][cmd_table]~~.
+Data between the MCU (master) and FPGA (slave) is transmitted using SPI and a custom 16-bit frame format and communication protocol. ~~The command table can be found [here][table_spi]~~.
 
 ##### Configuration
 The standard Freescale protocol is configured to `16-bit` frames with a transmission rate of `8 Mb/s` in `Mode 0`.
@@ -62,7 +63,7 @@ The `16-bit` frame are comprised of an address, data and checksum field, with va
 ##### Protocol
 Frames transmitted to the FPGA must be acknowledged with a frame of valid checksum, although the content of the frame may be disregarded. Checksum is calculated using the [BSD algorithm][bsd_wiki] on the 12 most-significant bits of a frame.
 
-[cmd_table]: #intersystem-communication--spi-
+[table_spi]: #intersystem-communication--spi-
 [bsd_wiki]: https://en.wikipedia.org/wiki/BSD_checksum
 [frm_format]: https://github.com/img.jpg
 
