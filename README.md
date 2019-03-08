@@ -1,10 +1,39 @@
-# Welcome to the RB-PRO4 F19 GitHub Page
+# RB-PRO4: Pan-Tilt System
+Short project description.
 
-## Project Description
+> This projects follows the following coding conventions for C++, Embedded C and VHDL.
+
+---
+
+##### Table of Contents
+
+* [System Architecture](#system-architecture)
+* [Interfacing](#interfacing)
+	+ [Console Interface (UART)](#console-interface--uart-)
+	+ [Intersystem Communication (SPI)](#intersystem-communication--spi-)
+	+ [FPGA Debugging (UART)](#fpga-debugging--uart-)
+* [Controller](#controller)
+
+---
+
+## System Architecture
 Description of architecture text here please.
 
 ![System Arhictecture](https://i.imgur.com/ozbbVL8.png)
 
-### Support or Contact
+Links to the components of system.
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Interfacing
+Text.
+
+### Console Interface (UART)
+Text.
+
+### Intersystem Communication (SPI)
+Text.
+
+### FPGA Debugging (UART)
+Text.
+
+## Controller
+Text.
