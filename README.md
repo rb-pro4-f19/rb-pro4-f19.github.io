@@ -65,7 +65,7 @@ Frames transmitted to the FPGA must be acknowledged with a frame of valid checks
 
 [table_spi]: #intersystem-communication--spi-
 [bsd_wiki]: https://en.wikipedia.org/wiki/BSD_checksum
-[frm_format]: https://github.com/img.jpg
+[frm_format]: https://github.com/rb-pro4-f19/Overleaf/blob/master/assets/img/spi_frames.jpg
 
 ### FPGA Debugging (UART)
 Text.
