@@ -50,13 +50,10 @@ Text.
 Text.
 
 ### Intersystem Communication (SPI)
-Data between the MCU (master) and FPGA (slave) is transmitted using SPI and a custom 16-bit frame format and communication protocol. ~~The command table can be found [here][table_spi]~~.
+Data between the MCU (master) and FPGA (slave) is transmitted using SPI and a custom 16-bit frame format and protocol. The MCU can transmit a frame of type send/request while the FPGA can reply with a frame of type response.~~The command table can be found [here][table_spi]~~.
 
-#### Configuration
-The standard Freescale protocol is configured to `16-bit` frames with a transmission rate of `8 Mb/s` in `Mode 0`.
-
-#### Frame Format
-The `16-bit` frame are comprised of an address, data and checksum field, with varying sizes: respectively `ADDR:4`, `DATA:8` and `CHKSUM:4`. Response frames from FPGA to MCU omits the address fields and consists instead of respectively `DATA:12` and `CHKSUM:4`.
+#### Format
+The standard Freescale protocol is configured to 16-bit frames with a transmission rate of `8 Mb/s` in `Mode 0`. The send/request type frames are comprised of an address, data and checksum field, with varying sizes: respectively `ADDR:4`, `DATA:8` and `CHKSUM:4`. Response frames omit the address field and consists instead of respectively `DATA:12` and `CHKSUM:4`.
 
 ![frm_format]
 
