@@ -45,9 +45,12 @@ Text.
 
 ## Interfacing
 
-
 ### Console Interface (UART)
-Text.
+Sketch of the protocol:
+
+![uart_frame]
+
+[uart_frame]: https://raw.githubusercontent.com/rb-pro4-f19/Overleaf/master/assets/img/uart_protocol.jpg
 
 ### Intersystem Communication (SPI)
 Data between the MCU (master) and FPGA (slave) is transmitted using SPI and a custom 16-bit frame format and protocol. The MCU can transmit a frame of type send/request while the FPGA can reply with a frame of type response.~~The command table can be found [here][table_spi]~~.
@@ -55,14 +58,14 @@ Data between the MCU (master) and FPGA (slave) is transmitted using SPI and a cu
 #### Format
 The standard Freescale protocol is configured to 16-bit frames with a transmission rate of `8 Mb/s` in `Mode 0`. The send/request type frames are comprised of an address, data and checksum field, with varying sizes: respectively `ADDR:4`, `DATA:8` and `CHKSUM:4`. Response frames omit the address field and consists instead of respectively `DATA:12` and `CHKSUM:4`.
 
-![frm_format]
+![spi_frame]
 
 #### Protocol
 Frames transmitted to the FPGA must be acknowledged with a frame of valid checksum, although the content of the frame may be disregarded. Checksum is calculated using the [BSD algorithm][bsd_wiki] on the 12 most-significant bits of a frame.
 
 [table_spi]: #intersystem-communication--spi-
 [bsd_wiki]: https://en.wikipedia.org/wiki/BSD_checksum
-[frm_format]: https://raw.githubusercontent.com/rb-pro4-f19/Overleaf/master/assets/img/spi_frames.jpg
+[spi_frame]: https://raw.githubusercontent.com/rb-pro4-f19/Overleaf/master/assets/img/spi_frames.jpg
 
 ### FPGA Debugging (UART)
 Text.
