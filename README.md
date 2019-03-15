@@ -3,20 +3,20 @@ A construction comprised of two joints with two degrees of rotational freedom, p
 
 ![Cad Model][cad-model-gif]
 
-The main objective of the project is to develop a stable and responsive system controller in accordance with specified [system requirements](#system-requirments). The robot must respond appropriately when interfaced with a joystick, even in the presence of potential disturbances.
+The main objective of the project is to develop a stable and responsive system controller in accordance with specified [system requirements](#system-requirements). The robot must respond appropriately when interfaced with a joystick, even in the presence of potential disturbances.
 
-[cad-model-gif]: https://github.com/rb-pro4-f19/Overleaf/blob/master/assets/img/cad_model.gif
+[cad-model-gif]: https://raw.githubusercontent.com/rb-pro4-f19/Overleaf/master/assets/img/cad_model.gif
 
 ---
 
-##### Table of Contents
+## Table of Contents
 
 * [System Architecture](#system-architecture)
-* [System Requirements](#system-requirments)
+* [System Requirements](#system-requirements)
 * [Interfacing](#interfacing)
-	+ [Console Interface (UART)](#console-interface--uart-)
-	+ [Intersystem Communication (SPI)](#intersystem-communication--spi-)
-	+ [FPGA Debugging (UART)](#fpga-debugging--uart-)
+	+ [Console Interface (UART)](#console-interface-uart)
+	+ [Intersystem Communication (SPI)](#intersystem-communication-spi)
+	+ [FPGA Debugging (UART)](#fpga-debugging-uart)
 * [Controller](#controller)
 
 ---
@@ -34,7 +34,7 @@ The MCU is interfaced via a console over a UART serial connection, enabling user
 
 Information regarding the system components can be found in their respective read-me files of their repositories. ~~A table of system commands can be found [here][table_cli].~~
 
-[system_architecture]: https://github.com/rb-pro4-f19/Overleaf/blob/master/assets/img/system_architecture.jpg
+[system_architecture]: https://raw.githubusercontent.com/rb-pro4-f19/Overleaf/master/assets/img/system_architecture.jpg
 [table_cli]: #system-architecture
 [cli]: https://github.com/rb-pro4-f19/CLI
 [mcu]: https://github.com/rb-pro4-f19/MCU
@@ -45,27 +45,27 @@ Text.
 
 ## Interfacing
 
-
 ### Console Interface (UART)
-Text.
+Sketch of the protocol:
+
+![uart_frame]
+
+[uart_frame]: https://raw.githubusercontent.com/rb-pro4-f19/Overleaf/master/assets/img/uart_protocol.jpg
 
 ### Intersystem Communication (SPI)
-Data between the MCU (master) and FPGA (slave) is transmitted using SPI and a custom 16-bit frame format and communication protocol. ~~The command table can be found [here][table_spi]~~.
+Data between the MCU (master) and FPGA (slave) is transmitted using SPI and a custom 16-bit frame format and protocol. The MCU can transmit a frame of type send/request while the FPGA can reply with a frame of type response.~~The command table can be found [here][table_spi]~~.
 
-##### Configuration
-The standard Freescale protocol is configured to `16-bit` frames with a transmission rate of `8 Mb/s` in `Mode 0`.
+#### Format
+The standard Freescale protocol is configured to 16-bit frames with a transmission rate of `8 Mb/s` in `Mode 0`. The send/request type frames are comprised of an address, data and checksum field, with varying sizes: respectively `ADDR:4`, `DATA:8` and `CHKSUM:4`. Response frames omit the address field and consists instead of respectively `DATA:12` and `CHKSUM:4`.
 
-##### Frame Format
-The `16-bit` frame are comprised of an address, data and checksum field, with varying sizes: respectively `ADDR:4`, `DATA:8` and `CHKSUM:4`. Response frames from FPGA to MCU omits the address fields and consists instead of respectively `DATA:12` and `CHKSUM:4`.
+![spi_frame]
 
-![frm_format]
-
-##### Protocol
+#### Protocol
 Frames transmitted to the FPGA must be acknowledged with a frame of valid checksum, although the content of the frame may be disregarded. Checksum is calculated using the [BSD algorithm][bsd_wiki] on the 12 most-significant bits of a frame.
 
 [table_spi]: #intersystem-communication--spi-
 [bsd_wiki]: https://en.wikipedia.org/wiki/BSD_checksum
-[frm_format]: https://github.com/img.jpg
+[spi_frame]: https://raw.githubusercontent.com/rb-pro4-f19/Overleaf/master/assets/img/spi_frames.jpg
 
 ### FPGA Debugging (UART)
 Text.
