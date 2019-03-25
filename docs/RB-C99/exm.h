@@ -5,6 +5,7 @@
 * FILENAME...:	exm.h
 * MODULENAME.:	EXAMPLE
 * API........:	github.com/rb-pro4-f19/MCU/blob/master/README.md
+* VERSION....:	1.0.0
 *
 * DESCRIPTION:	An example module. This might have a lengthy description, in
 *				which case, we simply add some tabs.

@@ -32,10 +32,10 @@ The MCU is interfaced via a console over a UART serial connection, enabling user
 
 ![system_architecture]
 
-Information regarding the system components can be found in their respective read-me files of their repositories. ~~A table of system commands can be found [here][table_cli].~~
+Information regarding the system components can be found in their respective read-me files of their repositories. A collective table of system commands can be found [here][table_cmd].
 
 [system_architecture]: https://raw.githubusercontent.com/rb-pro4-f19/Overleaf/master/assets/img/system_architecture.jpg
-[table_cli]: #system-architecture
+[table_cmd]: https://docs.google.com/document/d/1VwTVTBXRwgExEscHCMYQRrKJIaRkZEnGWZFQIQyfFxY/export?format=pdf
 [cli]: https://github.com/rb-pro4-f19/CLI
 [mcu]: https://github.com/rb-pro4-f19/MCU
 [fpga]: https://github.com/rb-pro4-f19/FPGA
@@ -82,7 +82,7 @@ Sketch of the protocol:
 [uart_frame]: https://raw.githubusercontent.com/rb-pro4-f19/Overleaf/master/assets/img/uart_protocol.jpg
 
 ### Intersystem Communication (SPI)
-Data between the MCU (master) and FPGA (slave) is transmitted using SPI and a custom 16-bit frame format and protocol. The MCU can transmit a frame of type send/request while the FPGA can reply with a frame of type response.~~The command table can be found [here][table_spi]~~.
+Data between the MCU (master) and FPGA (slave) is transmitted using SPI and a custom 16-bit frame format and protocol. The MCU can transmit a frame of type send/request while the FPGA can reply with a frame of type response.The command table can be found [here][table_cmd].
 
 #### Format
 The standard Freescale protocol is configured to 16-bit frames with a transmission rate of `8 Mb/s` in `Mode 0`. The send/request type frames are comprised of an address, data and checksum field, with varying sizes: respectively `ADDR:4`, `DATA:8` and `CHKSUM:4`. Response frames omit the address field and consists instead of respectively `DATA:12` and `CHKSUM:4`.
@@ -92,7 +92,6 @@ The standard Freescale protocol is configured to 16-bit frames with a transmissi
 #### Protocol
 Frames transmitted to the FPGA must be acknowledged with a frame of valid checksum, although the content of the frame may be disregarded. Checksum is calculated using a 4-bit implementation of the [BSD algorithm][bsd_wiki] on the 12 most-significant bits of a frame.
 
-[table_spi]: #intersystem-communication--spi-
 [bsd_wiki]: https://en.wikipedia.org/wiki/BSD_checksum
 [spi_frame]: https://raw.githubusercontent.com/rb-pro4-f19/Overleaf/master/assets/img/spi_frames.jpg
 
