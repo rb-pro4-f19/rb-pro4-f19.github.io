@@ -46,6 +46,35 @@ Text.
 ## Interfacing
 
 ### Console Interface (UART)
+Data between the console device (CLI) and MCU is transmitted using a custom implementation of UART, using the following frame specifications:
+
+| Property            | Value               |
+|---------------------|---------------------|
+| Data-size:          | 8 bits              |
+| Start-bit:          | 1                   |
+| Stop-bit:           | 1                   |
+| Baudrate:           | 9600                |
+| Parity:             | None                |
+| <img width="200" /> | <img width="500" /> |
+
+#### Format
+The communication is based on a predefined datagram structure, consisting of a header frame, payload frame(s) and a checksum frame.
+
+[Illustration of Datagram Format]
+
+The header frame defines a 3-bit type of datagram as-well-as a 5-bit size of the following payload; the payload can be up to 32 x 8-bit frames (256 bytes). Checksum is calculated using an 8-bit implementation of the [BSD algorithm][bsd_wiki], computed using the header and payload of a datagram, starting from MSB.
+
+#### Protocol
+The system is implemented as semi-full-duplex, wherein the CLI acts as master. Communication initiated by the master must be acknowledged by a frame of type `ACK` or `RESPONSE` with a valid checksum. The MCU can initiate transmission of certain types of datagrams, although doesn't require an acknowledge.
+
+#### C++ Implementation (CLI)
+The CLI concurrently listens for datagrams to be sent by the MCU; when a header frame is received, the receiver attempts to accumulate the number of frames indicated by the header's size field within a timeout period. If succeeded, a callback is invoked according to the datagram type. This is illustrated by the following state machine:
+
+[Illustration of C++ Implementation]
+
+#### Special Capabilities
+Text.
+
 Sketch of the protocol:
 
 ![uart_frame]
@@ -61,7 +90,7 @@ The standard Freescale protocol is configured to 16-bit frames with a transmissi
 ![spi_frame]
 
 #### Protocol
-Frames transmitted to the FPGA must be acknowledged with a frame of valid checksum, although the content of the frame may be disregarded. Checksum is calculated using the [BSD algorithm][bsd_wiki] on the 12 most-significant bits of a frame.
+Frames transmitted to the FPGA must be acknowledged with a frame of valid checksum, although the content of the frame may be disregarded. Checksum is calculated using a 4-bit implementation of the [BSD algorithm][bsd_wiki] on the 12 most-significant bits of a frame.
 
 [table_spi]: #intersystem-communication--spi-
 [bsd_wiki]: https://en.wikipedia.org/wiki/BSD_checksum
