@@ -48,14 +48,13 @@ Text.
 ### Console Interface (UART)
 Data between the console device (CLI) and MCU is transmitted using a custom implementation of UART, using the following frame specifications:
 
-| Property            | Value               |
+| Property <img width="10" />            | Value <img width="50" />             |
 |---------------------|---------------------|
 | Data-size:          | 8 bits              |
 | Start-bit:          | 1                   |
 | Stop-bit:           | 1                   |
 | Baudrate:           | 9600                |
 | Parity:             | None                |
-| <img width="200" /> | <img width="500" /> |
 
 #### Format
 The communication is based on a predefined datagram structure, consisting of a header frame, payload frame(s) and a checksum frame.
