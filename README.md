@@ -48,7 +48,7 @@ Text.
 ### Console Interface (UART)
 Data between the console device (CLI) and MCU is transmitted using a custom implementation of UART, using the following frame specifications:
 
-| Property <img width="700"/> | Value  |
+| Property <img width="600"/> | Value  |
 |-----------------------------|--------|
 | Data-size:                  | 8 bits |
 | Start-bit:                  | 1      |
@@ -61,7 +61,7 @@ The communication is based on a predefined datagram structure, consisting of a h
 
 ![uart_datagram]
 
-The header frame defines a `3-bit` `TYPE` of datagram as-well-as a `5-bit` `SIZE` of the following payload; the payload can be up to 32 x 8-bit frames (256 bytes). Checksum is calculated using an 8-bit implementation of the [BSD algorithm][bsd_wiki], computed using the header and payload of a datagram, starting from MSB.
+The header frame defines a `3-bit` `TYPE` of datagram as-well-as a `5-bit` `SIZE` of the following payload; the payload can be up to 32 x 8-bit frames (32 bytes). Checksum is calculated using an 8-bit implementation of the [BSD algorithm][bsd_wiki], computed using the header and payload of a datagram, starting from MSB.
 
 #### Protocol
 The system is implemented as semi-full-duplex, wherein the CLI acts as master. Communication initiated by the master must be acknowledged by a frame of type `ACK` or `RESPONSE` with a valid checksum. The MCU can initiate transmission of certain types of datagrams, although doesn't require an acknowledge.
